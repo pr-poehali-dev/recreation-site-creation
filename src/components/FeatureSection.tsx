@@ -1,41 +1,41 @@
-import { Tent, Fish, Bike, Utensils, Wifi, Trees } from "lucide-react";
+import { Ship, Fish, Swim, Home, Utensils, Sun } from "lucide-react";
 
 const features = [
   {
-    icon: <Tent className="h-10 w-10 text-primary" />,
-    title: "Уютные домики",
-    description: "Комфортабельные домики с удобствами для проживания в любой сезон"
+    icon: <Home className="h-10 w-10 text-primary" />,
+    title: "Комфортное проживание",
+    description: "Уютные домики со всеми удобствами на берегу Бурейского водохранилища"
   },
   {
     icon: <Fish className="h-10 w-10 text-primary" />,
-    title: "Рыбалка",
-    description: "Отличная рыбалка на озере с богатым разнообразием рыбы"
+    title: "Отличная рыбалка",
+    description: "Богатые рыбой места, где можно поймать отличный улов"
   },
   {
-    icon: <Bike className="h-10 w-10 text-primary" />,
-    title: "Активный отдых",
-    description: "Велопрогулки, квадроциклы, пешие маршруты по лесным тропам"
+    icon: <Swim className="h-10 w-10 text-primary" />,
+    title: "Водные развлечения",
+    description: "Купание, катание на лодках и другие водные развлечения"
+  },
+  {
+    icon: <Sun className="h-10 w-10 text-primary" />,
+    title: "Пляжный отдых",
+    description: "Оборудованные места для загара и отдыха у воды"
+  },
+  {
+    icon: <Ship className="h-10 w-10 text-primary" />,
+    title: "Прогулки на катере",
+    description: "Возможность арендовать катер для прогулок по водохранилищу"
   },
   {
     icon: <Utensils className="h-10 w-10 text-primary" />,
-    title: "Ресторан",
-    description: "Ресторан с местной кухней и свежими экологичными продуктами"
-  },
-  {
-    icon: <Wifi className="h-10 w-10 text-primary" />,
-    title: "Wi-Fi",
-    description: "Бесплатный Wi-Fi на всей территории базы отдыха"
-  },
-  {
-    icon: <Trees className="h-10 w-10 text-primary" />,
-    title: "Экологичность",
-    description: "Чистый воздух, экологичная территория и природные материалы"
+    title: "Зона барбекю",
+    description: "Оборудованные места для приготовления шашлыка и барбекю"
   }
 ];
 
 const FeatureSection = () => {
   return (
-    <section className="py-16 bg-muted">
+    <section className="py-16 bg-blue-50">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Наши преимущества</h2>
         
@@ -43,7 +43,7 @@ const FeatureSection = () => {
           {features.map((feature, index) => (
             <div 
               key={index} 
-              className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow"
+              className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-blue-100"
             >
               <div className="mb-4">{feature.icon}</div>
               <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>

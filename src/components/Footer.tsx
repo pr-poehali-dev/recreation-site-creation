@@ -1,57 +1,105 @@
 import { Link } from "react-router-dom";
-import { MapPin, Phone, Mail, Instagram, Facebook } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Anchor, Phone, Mail, MapPin, Facebook, Instagram, Youtube } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-primary text-primary-foreground">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer className="bg-blue-900 text-white pt-16 pb-8">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Logo and About */}
           <div>
-            <h3 className="text-xl font-bold mb-4">Лесная Гавань</h3>
-            <p className="mb-4">База отдыха на берегу живописного озера с уютными домиками и развлечениями для всей семьи.</p>
-            <div className="flex gap-4">
-              <a href="https://instagram.com" className="hover:text-accent transition-colors" aria-label="Instagram">
-                <Instagram />
+            <div className="flex items-center space-x-2 mb-4">
+              <Anchor className="h-6 w-6" />
+              <span className="font-bold text-xl">Причал</span>
+            </div>
+            <p className="mb-6 text-blue-100">
+              База отдыха на берегу Бурейского водохранилища. Идеальное место для отдыха, 
+              рыбалки и водных развлечений.
+            </p>
+            <div className="flex space-x-4">
+              <a href="#" className="hover:text-blue-300 transition-colors">
+                <Facebook className="h-5 w-5" />
               </a>
-              <a href="https://facebook.com" className="hover:text-accent transition-colors" aria-label="Facebook">
-                <Facebook />
+              <a href="#" className="hover:text-blue-300 transition-colors">
+                <Instagram className="h-5 w-5" />
+              </a>
+              <a href="#" className="hover:text-blue-300 transition-colors">
+                <Youtube className="h-5 w-5" />
               </a>
             </div>
           </div>
-          
+
+          {/* Quick Links */}
           <div>
-            <h3 className="text-xl font-bold mb-4">Контакты</h3>
-            <div className="space-y-3">
-              <div className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 mt-0.5" />
-                <p>Красивое озеро, Экологичный район, Природная область</p>
-              </div>
-              <div className="flex items-center gap-3">
-                <Phone className="h-5 w-5" />
-                <a href="tel:+7XXXXXXXXXX" className="hover:text-accent transition-colors">+7 (XXX) XXX-XX-XX</a>
-              </div>
-              <div className="flex items-center gap-3">
-                <Mail className="h-5 w-5" />
-                <a href="mailto:info@lesnaya-gavan.ru" className="hover:text-accent transition-colors">info@lesnaya-gavan.ru</a>
-              </div>
-            </div>
+            <h3 className="text-lg font-semibold mb-4">Навигация</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link to="/" className="text-blue-100 hover:text-white transition-colors">
+                  Главная
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" className="text-blue-100 hover:text-white transition-colors">
+                  О нас
+                </Link>
+              </li>
+              <li>
+                <Link to="/cottages" className="text-blue-100 hover:text-white transition-colors">
+                  Домики
+                </Link>
+              </li>
+              <li>
+                <Link to="/activities" className="text-blue-100 hover:text-white transition-colors">
+                  Активности
+                </Link>
+              </li>
+              <li>
+                <Link to="/gallery" className="text-blue-100 hover:text-white transition-colors">
+                  Галерея
+                </Link>
+              </li>
+              <li>
+                <Link to="/contacts" className="text-blue-100 hover:text-white transition-colors">
+                  Контакты
+                </Link>
+              </li>
+            </ul>
           </div>
-          
+
+          {/* Contact Info */}
           <div>
-            <h3 className="text-xl font-bold mb-4">Навигация</h3>
-            <nav className="grid grid-cols-1 gap-2">
-              <Link to="/" className="hover:text-accent transition-colors">Главная</Link>
-              <Link to="/cottages" className="hover:text-accent transition-colors">Домики</Link>
-              <Link to="/activities" className="hover:text-accent transition-colors">Развлечения</Link>
-              <Link to="/gallery" className="hover:text-accent transition-colors">Галерея</Link>
-              <Link to="/contacts" className="hover:text-accent transition-colors">Контакты</Link>
-              <Link to="/booking" className="hover:text-accent transition-colors">Бронирование</Link>
-            </nav>
+            <h3 className="text-lg font-semibold mb-4">Контакты</h3>
+            <ul className="space-y-4">
+              <li className="flex items-start">
+                <Phone className="h-5 w-5 mr-3 mt-0.5 flex-shrink-0" />
+                <span>+7 (999) 123-45-67</span>
+              </li>
+              <li className="flex items-start">
+                <Mail className="h-5 w-5 mr-3 mt-0.5 flex-shrink-0" />
+                <span>info@prichal-base.ru</span>
+              </li>
+              <li className="flex items-start">
+                <MapPin className="h-5 w-5 mr-3 mt-0.5 flex-shrink-0" />
+                <span>Бурейское водохранилище, берег у п. Талакан</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Newsletter */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Бронирование</h3>
+            <p className="text-blue-100 mb-4">
+              Забронируйте отдых на базе «Причал» прямо сейчас по цене 1500 ₽ с человека в сутки
+            </p>
+            <Button asChild size="sm" className="w-full bg-white text-primary hover:bg-blue-50">
+              <Link to="/booking">Забронировать</Link>
+            </Button>
           </div>
         </div>
-        
-        <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
-          <p>© {new Date().getFullYear()} Лесная Гавань. Все права защищены.</p>
+
+        <div className="border-t border-blue-800 mt-12 pt-8 text-center text-blue-300 text-sm">
+          <p>&copy; {new Date().getFullYear()} База отдыха «Причал». Все права защищены.</p>
         </div>
       </div>
     </footer>
